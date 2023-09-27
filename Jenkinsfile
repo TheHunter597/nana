@@ -1,19 +1,28 @@
 pipeline {
     agent any
+    environment{
+        VERSION="1.0.3"
+    }
     stages{
         stage("build"){
             steps{
-                echo "build"
+                script{
+                    load "stages/build.groovy"
+                }
             }
         }
         stage("test"){
             steps{
-                echo "test"
+                 script{
+                    load "stages/test.groovy"
+                }
             }
         }
         stage("deploy"){
             steps{
-                echo "deploy"
+                 script{
+                    load "stages/deploy.groovy"
+                }
             }
         }
     }
