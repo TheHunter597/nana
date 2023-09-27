@@ -7,7 +7,10 @@ node{
     )]){
     stage('build'){
         echo "Building"
-        echo "Username {$USERNAME}"
-        echo "Password {$PASSWORD}"
+       if("$Username" == "nexus"){
+        echo "correct"
+       }else{
+        echo "incorrect"
+       }
     }}
 }
