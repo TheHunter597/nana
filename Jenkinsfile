@@ -6,6 +6,13 @@ pipeline {
     stages{
         stage("build"){
             steps{
+                withCredentials([
+                    usernamePassword(
+                        credentialsId: 'nexus',
+                        usernameVariable: 'USERNAME',
+                        passwordVariable: 'PASSWORD'
+                    
+                    )])
                 script{
                     load "stages/build.groovy"
                 }
