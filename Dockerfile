@@ -2,10 +2,10 @@ FROM oven/bun
 
 WORKDIR /app
 
-COPY package.json .
+COPY ../package.json .
 
 RUN bun install
 
-COPY . .
+COPY ../ .
 
 CMD ["bun","--hot","run","index.ts"]
