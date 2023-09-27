@@ -7,7 +7,7 @@ node{
     )]){
     stage('build'){
         echo "Building"
-       if("$Username" == "nexus"){
+       if("$Username" == "nexus_1"){
         echo "correct"
        }else{
         echo "incorrect"
