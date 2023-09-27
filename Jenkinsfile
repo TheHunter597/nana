@@ -4,7 +4,7 @@ pipeline {
         VERSION="1.0.3"
     }
     parameters{
-        version(name:"Version", choices: ["1.0.5","1.0.6"], description: "Version to build")
+        choice(name:"Version", choices: ["1.0.5","1.0.6"], description: "Version to build")
     }
     stages{
         stage("build"){
