@@ -6,12 +6,9 @@ node{
         passwordVariable: 'PASSWORD'
     )]){
     stage('build'){
-        echo "Building"
-<<<<<<< HEAD
-=======
+        echo "Building ma"
         def currentVersion= params.Version
         echo "${currentVersion}"
->>>>>>> ec81217 (added som params)
        if("$Username" == "nexus_1"){
         echo "correct"
        }else{
