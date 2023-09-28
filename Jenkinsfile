@@ -1,4 +1,5 @@
 #! groovy
+@library("shared-jenkins-library") _
 pipeline {
     agent any
     environment{
@@ -11,8 +12,16 @@ pipeline {
         stage("build"){
             steps{
                 script{
-                    load "stages/build.groovy"
-                    buildApp()
+                    def userInput = input(
+                        id:"userInput",
+                        message:"Select a version to build",
+                        parameters{
+                            string(name:"Version")
+                        }
+                    )
+                    DockerUtils().loginToDockerHub("dockerhub")
+                    DockerUtils().buildImage(userInput.Version)
+                    DockerUtils().pushImage(userInput.Version)
                 }
             }
         }
