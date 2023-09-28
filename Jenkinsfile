@@ -11,8 +11,8 @@ pipeline {
         stage("build"){
             steps{
                 script{
-                    load "stages/build.groovy"
-                    buildApp()
+                    build=load "stages/build.groovy"
+                    build.buildApp()
                 }
             }
         }
