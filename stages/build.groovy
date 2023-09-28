@@ -20,3 +20,4 @@ def buildApp(){
         echo "Done"
     }
 }
+return this
