@@ -1,3 +1,4 @@
+#! groovy
 pipeline {
     agent any
     environment{
@@ -11,6 +12,7 @@ pipeline {
             steps{
                 script{
                     load "stages/build.groovy"
+                    buildApp()
                 }
             }
         }
