@@ -20,9 +20,9 @@ pipeline {
                             string(name:"Version")
                         ]
                     )
-                    DockerUtils().loginToDockerHub("dockerhub")
-                    DockerUtils().buildImage("$userInput")
-                    DockerUtils().pushImage("$userInput")
+                    dockerLogin 'dockerhup'
+                    dockerBuild '1.0.3'
+                    dockerPush '1.0.3'
                 }
             }
         }
