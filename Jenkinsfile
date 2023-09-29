@@ -16,13 +16,13 @@ pipeline {
                     def userInput = input(
                         id:"userInput",
                         message:"Select a version to build maaan",
-                        parameters{
+                        parameters:[
                             string(name:"Version")
-                        }
+                        ]
                     )
                     DockerUtils().loginToDockerHub("dockerhub")
-                    DockerUtils().buildImage(userInput.Version)
-                    DockerUtils().pushImage(userInput.Version)
+                    DockerUtils().buildImage("$userInput")
+                    DockerUtils().pushImage("$userInput")
                 }
             }
         }
