@@ -1,5 +1,6 @@
 #! groovy
-@library("shared-jenkins-library") _
+// testman
+@Library('shared-jenkins-library') _
 pipeline {
     agent any
     environment{
@@ -14,7 +15,7 @@ pipeline {
                 script{
                     def userInput = input(
                         id:"userInput",
-                        message:"Select a version to build",
+                        message:"Select a version to build maaan",
                         parameters{
                             string(name:"Version")
                         }
